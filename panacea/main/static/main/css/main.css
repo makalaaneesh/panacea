@@ -1,0 +1,67 @@
+
+.fade1 h1{
+	font-size: 400%;
+	font-family: 'Kaushan Script', cursive;
+}
+
+.fade2{
+	/*border: 1px solid black;*/
+	font-size: 300%;
+	font-family: 'Kaushan Script', cursive;
+	margin-top: -20px;
+	/*margin-left: 35vw;*/
+	/*left: 100px;*/
+	/*margin-top:10px;*/
+	/*position: absolute;*/
+}
+.navbar{
+	background-color: rgba(0,0,0,0.7);
+	
+}
+.navbar-brand{
+	border-right: 1px solid white;
+}
+
+
+.texty{
+
+	position: absolute;
+	z-index: 100;
+	margin-top: -10px;
+	/*margin-left: -10px;*/
+	/*margin-left: 35vw;*/
+	/*border: 1px solid black;*/
+	width: 100vw;
+	text-align: center;
+	
+	
+}
+.picshead{
+	/*border: 4px solid black;*/
+	position: relative;
+	width:   100vw;  
+    height: 100vh;
+    padding: 0;  
+    margin:  0;  
+}
+
+.pics {  
+	position: absolute;
+	/*border: 4px solid black;*/
+	/*border: 1px solid black;*/
+    
+    width:   100%;  
+    min-height: 100%;
+    padding: 0;  
+    margin:  0;  
+} 
+
+.pics img {  
+	position: absolute;
+    
+    background-color: #eee;  
+    width:  100%; 
+    min-height: 100%; 
+    top:  0; 
+    left: 0;
+} 

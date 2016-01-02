@@ -1,0 +1,205 @@
+{% load staticfiles %}
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static "main/css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "main/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "main/css/foundation.min.css" %}">
+    
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="css/foundation.css"> -->
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <!-- // <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static "main/js/viewportchecker.js" %}"></script>
+    <!-- // <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
+    <script type="text/javascript" src="{% static "main/js/bootstrap.min.js" %}"></script>
+    
+    <link rel="stylesheet" href="{% static "main/css/about.css" %}">
+    <script type="text/javascript">
+    
+    $(document).ready(function(){
+        $('.post').addClass("hideme").viewportChecker({
+        classToAdd: 'visible animated pulse',
+        offset: 100
+       });
+        $('#name').addClass("animated pulse bounceInLeft")
+      // $(".post").addClass("hidden").delay(500).addClass("visible");
+      });
+    </script>
+  </head>
+  <body >
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand text" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+        <li ><a href="#">My Art</a></li>
+        
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+  <br><br><br>
+      <div class="row">
+        <div class="large-12 columns">
+           <h1 id="name">Umadevi Makala</h1>
+          <hr>
+        </div>
+      </div>
+
+      <div  class="row">
+        <div class="large-12 columns">
+          <img src="http://placehold.it/1000x500&text=[banner img]">
+          scroll donw
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+      </div>
+    <div class="container">
+      <div  class="post row">
+        <hr>
+        <div class="large-8 columns">
+          <h4 class="post">About</h4>
+          <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+          <i class="fi-social-twitter"></i>
+        </div>
+        <div class="large-4 columns">
+          <img src="http://placehold.it/400x300&text=[img]">
+        </div>
+      </div>
+      </div>
+    <div class="container">
+      <div class="post row">
+        <hr>
+        <div class="post large-12 columns">
+          <h4>Work</h4>
+          <p>Click on each image!</p>
+
+          <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4" data-clearing>
+            <li>
+              <a href="http://placehold.it/800x500&text=[img]">
+              <img data-caption="caption here..." src="http://placehold.it/800x500&text=[img]"></a>
+            </li>
+            <li>
+              <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 2 here..." src="http://placehold.it/800x500&text=[img]"></a>
+            </li>
+            <li>
+              <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 3 here..." src="http://placehold.it/800x500&text=[img]"></a>
+            </li>
+            <li>
+              <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 4 here..." src="http://placehold.it/800x500&text=[img]"></a>
+            </li>
+            <li>
+              <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 5 here..." src="http://placehold.it/800x500&text=[img]"></a>
+            </li>       
+            <li>
+              <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 6 here..." src="http://placehold.it/800x500&text=[img]"></a>
+            </li> 
+          </ul>
+        </div>
+      </div>
+      </div>
+
+      <div class="post row">
+        <div class="large-12 columns">
+          <hr>
+          <h4>Contact Me</h4>
+          <div class="large-4 columns">
+            Email: <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0b666e4b66727b64797f6d6467626425686466">[email protected]</a><script cf-hash='f9e31' type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/* ]]> */</script>
+          </div>
+          <div class="large-4 columns">
+            Twitter: @twitterhandle
+          </div>
+          <div class="large-4 columns">
+            Phone: 555-555-1234
+          </div>
+        </div>
+      </div>
+      </div>
+      
+      <footer class="row">
+          <div class="large-12 columns">
+            <hr/>
+            <div class="row">
+              <div class="large-6 columns">
+                <p>© Copyright no one at all. Go to town.</p>
+              </div>
+              <div class="large-6 columns">
+                <ul class="inline-list right">
+                  <li><a href="#">Link 1</a></li>
+                  <li><a href="#">Link 2</a></li>
+                  <li><a href="#">Link 3</a></li>
+                  <li><a href="#">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </footer>
+      
+    </body>
+  </html>
+    
