@@ -23,5 +23,19 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/', 'main.views.index'),
-    url(r'^home/', 'main.views.home')
+    url(r'^home/', 'main.views.home'),
+    url(r'^art/', 'main.views.listing')
+
+]
+
+
+from django.conf import settings
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.STATIC_ROOT,
+        }),
 ]

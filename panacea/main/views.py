@@ -9,3 +9,8 @@ def index(request):
 def home(request):
 	context = {}
 	return render(request, 'main/about.html', context)
+
+
+def listing(request):
+	context = {}
+	return render(request, 'main/listing.djt', context)
