@@ -77,16 +77,23 @@ WSGI_APPLICATION = 'panacea.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'mom',
+#         'HOST': '127.0.0.1',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mom',
-        'HOST': '127.0.0.1',
-        'USER': 'root',
-        'PASSWORD': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'panaceadb',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
