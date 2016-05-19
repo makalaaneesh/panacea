@@ -5,8 +5,15 @@ from django.db import models
 
 image_folder = "main/images/large"
 thumbnail_folder = "main/images/thumbs"
+profile_folder = "main/images/profile"
 
 
+
+class Detail(models.Model):
+	picture = models.ImageField(upload_to = profile_folder)
+	about = models.TextField(max_length=10000, default="")
+	
+	
 class Category(models.Model):
 	name = models.CharField(max_length = 100)
 
@@ -17,6 +24,8 @@ class Category(models.Model):
 
 # Create your models here.
 class Painting(models.Model):
+	title = models.CharField(max_length=100, default="")
+	description = models.TextField(max_length=10000, default="")
 	image = models.ImageField(
 		upload_to=image_folder
 		)
@@ -39,13 +48,14 @@ class Painting(models.Model):
 		if not self.image:
 			return
 
-		from PIL import Image
+
+		from PIL import Image, ImageOps
 		from cStringIO import StringIO
 		from django.core.files.uploadedfile import SimpleUploadedFile
 		import os
 
 		# Set our max thumbnail size in a tuple (max width, max height)
-		THUMBNAIL_SIZE = (99, 66)
+		THUMBNAIL_SIZE = (250, 250)
 
 		DJANGO_TYPE = self.image.file.content_type
 
@@ -63,7 +73,8 @@ class Painting(models.Model):
 		# has a thumbnail() convenience method that contrains proportions.
 		# Additionally, we use Image.ANTIALIAS to make the image look better.
 		# Without antialiasing the image pattern artifacts may result.
-		image.thumbnail(THUMBNAIL_SIZE, Image.ANTIALIAS)
+		# image.thumbnail(THUMBNAIL_SIZE, Image.ANTIALIAS)
+		image = ImageOps.fit(image, THUMBNAIL_SIZE, Image.ANTIALIAS)
 
 		# Save the thumbnail
 		temp_handle = StringIO()
@@ -83,7 +94,10 @@ class Painting(models.Model):
 
 	def save(self, *args, **kwargs):
 
-		self.create_thumbnail()
+		old_obj = Painting.objects.filter(id = self.id)
+		if len(old_obj) == 0 or old_obj[0].image != self.image:
+			print "Creating new thumbnail"
+			self.create_thumbnail()
 
 		force_update = False
 
