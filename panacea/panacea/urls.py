@@ -24,7 +24,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/', 'main.views.index'),
     url(r'^home/', 'main.views.home'),
-    url(r'^art/', 'main.views.listing')
+    url(r'^art/', 'main.views.listing'),
+    url(r'^test', 'main.views.test')
 
 ]
 

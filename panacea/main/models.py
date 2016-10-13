@@ -24,6 +24,7 @@ class Category(models.Model):
 
 # Create your models here.
 class Painting(models.Model):
+	# size, medium, price
 	title = models.CharField(max_length=100, default="")
 	description = models.TextField(max_length=10000, default="")
 	image = models.ImageField(
@@ -73,8 +74,8 @@ class Painting(models.Model):
 		# has a thumbnail() convenience method that contrains proportions.
 		# Additionally, we use Image.ANTIALIAS to make the image look better.
 		# Without antialiasing the image pattern artifacts may result.
-		# image.thumbnail(THUMBNAIL_SIZE, Image.ANTIALIAS)
-		image = ImageOps.fit(image, THUMBNAIL_SIZE, Image.ANTIALIAS)
+		image.thumbnail(THUMBNAIL_SIZE, Image.ANTIALIAS)
+		# image = ImageOps.fit(image, THUMBNAIL_SIZE, Image.ANTIALIAS)
 
 		# Save the thumbnail
 		temp_handle = StringIO()

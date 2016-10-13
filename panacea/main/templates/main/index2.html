@@ -1,0 +1,204 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Image Grid Effects | Demo 2 | Codrops</title>
+	<meta name="description" content="Effect inspiration for opening an image grid item." />
+	<meta name="keywords" content="image grid, effect, inspiration, css, javascript, animation, masonry" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="favicon.ico">
+
+  <link rel="stylesheet" type="text/css" href="{% static "main/css/normalize.css" %}" />
+  <link rel="stylesheet" type="text/css" href="{% static "main/css/skeleton.css" %}" />
+   <link rel="stylesheet" type="text/css" href="{% static "main/css/nav.css" %}" />
+   <link rel="stylesheet" type="text/css" href="{% static "main/css/skeleton_custom.css" %}" />
+   <link href='//fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="{% static "main/css/line/normalize.css" %}" />
+        <link rel="stylesheet" type="text/css" href="{% static "main/css/line/demo.css" %}" />
+        <link rel="stylesheet" type="text/css" href="{% static "main/css/line/component.css" %}" />
+        <link rel="stylesheet" type="text/css" href="{% static "main/css/line/linkstyles.css" %}" />
+
+
+	<link rel="stylesheet" type="text/css" href="{% static "main/css/grid/normalize.css" %}" />
+	<!--<link rel="stylesheet" type="text/css" href="{% static "main/css/grid/demo.css" %}" /> -->
+	<link rel="stylesheet" type="text/css" href="{% static "main/css/grid/style2.css" %}" />
+	<link rel="stylesheet" type="text/css" href="{% static "main/css/fonts/font-awesome-4.3.0/css/font-awesome.min.css" %}" />
+	  <script src = "{% static "main/js/grid/modernizr-custom.js" %}"></script>
+
+
+
+	  <style>
+
+		body{
+			background-color: #3E3D40;
+    color: #fff;
+			font-family: 'Comfortaa', sans-serif;
+		}
+
+		#footer{
+			text-align: center;
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			/*background: rgba(30, 174, 219,.2);*/
+			background-color: #435A6B;
+			color: #fff;
+		}
+		
+
+	  </style>
+</head>
+
+<body class="demo-2">
+
+{% include "main/nav2.djt" %}
+	<div class="container">
+		
+		<div class="content">
+			<div class="grid">
+
+			{% for painting in paintings %}
+
+				<div class="grid__item mix  {% for tag  in painting.category.all %}
+                                {{tag}}
+                            {% endfor %}" data-size="{{painting.image.width}}x{{painting.image.height}}">
+					<a href="/media/{{ painting.image }}" class="img-wrap"><img src="/media/{{painting.thumbnail}}" alt="img06" />
+						<div class="description description--grid">
+							<h3>Mother's Love</h3>
+							<p>Every time you drink a glass of milk or eat a piece of cheese, you harm a mother. Please go vegan. <em>&mdash; Gary L. Francione</em></p>
+							<div class="details">
+								<ul>
+									<li><i class="icon icon-camera"></i><span>Canon PowerShot S95</span></li>
+									<li><i class="icon icon-focal_length"></i><span>22.5mm</span></li>
+									<li><i class="icon icon-aperture"></i><span>&fnof;/5.6</span></li>
+									<li><i class="icon icon-exposure_time"></i><span>1/1000</span></li>
+									<li><i class="icon icon-iso"></i><span>80</span></li>
+								</ul>
+							</div>
+						</div>
+					</a>
+				</div>
+
+
+			{% endfor %}
+
+
+
+			</div>
+			<!-- /grid -->
+			<div class="preview">
+				<button class="action action--close"><i class="fa fa-times"></i><span class="text-hidden">Close</span></button>
+				<div class="description description--preview"></div>
+			</div>
+			<!-- /preview -->
+		</div>
+
+		
+	</div>
+
+	<div id="footer">
+        <nav class="cl-effect-5">
+					<div id="filters">
+						
+					
+	        			<a><div class="filter" data-filter="*"><span data-hover="all">all</span></div></a>
+	        			{% for category in categories %}
+
+						<a><div class="filter" data-filter=".{{category.name}}"><span data-hover="{{category.name}}">{{category.name}}</span></div></a>
+						{% endfor %}
+
+					</div>
+				<!-- 	<a href="#"><span data-hover="Ratatouille">Ratatouille</span></a>
+					<a href="#"><span data-hover="Lassitude">Lassitude</span></a>
+					<a href="#"><span data-hover="Murmurous">Murmurous</span></a>
+					<a href="#"><span data-hover="Palimpsest">Palimpsest</span></a>
+					<a href="#"><span data-hover="Assemblage">Assemblage</span></a> -->
+				</nav>
+    </div>
+	<!-- /container -->
+  	<script src = "{% static "main/js/grid/imagesloaded.pkgd.min.js" %}"></script>
+  	<script src = "{% static "main/js/grid/masonry.pkgd.min.js" %}"></script>
+  	<script src = "{% static "main/js/grid/isotope.js" %}"></script>
+  	<script src = "{% static "main/js/grid/classie.js" %}"></script>
+  	<script src = "{% static "main/js/grid/main.js" %}"></script>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script>
+
+		// bind filter button click
+
+
+		(function() {
+			var support = { transitions: Modernizr.csstransitions },
+				// transition end event name
+				transEndEventNames = { 'WebkitTransition': 'webkitTransitionEnd', 'MozTransition': 'transitionend', 'OTransition': 'oTransitionEnd', 'msTransition': 'MSTransitionEnd', 'transition': 'transitionend' },
+				transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+				onEndTransition = function( el, callback ) {
+					var onEndCallbackFn = function( ev ) {
+						if( support.transitions ) {
+							if( ev.target != this ) return;
+							this.removeEventListener( transEndEventName, onEndCallbackFn );
+						}
+						if( callback && typeof callback === 'function' ) { callback.call(this); }
+					};
+					if( support.transitions ) {
+						el.addEventListener( transEndEventName, onEndCallbackFn );
+					}
+					else {
+						onEndCallbackFn();
+					}
+				};
+
+			$grid = new GridFx(document.querySelector('.grid'), {
+				imgPosition : {
+					x : -0.5,
+					y : 1
+				},
+				onOpenItem : function(instance, item) {
+					instance.items.forEach(function(el) {
+						if(item != el) {
+							var delay = Math.floor(Math.random() * 50);
+							el.style.WebkitTransition = 'opacity .5s ' + delay + 'ms cubic-bezier(.7,0,.3,1), -webkit-transform .5s ' + delay + 'ms cubic-bezier(.7,0,.3,1)';
+							el.style.transition = 'opacity .5s ' + delay + 'ms cubic-bezier(.7,0,.3,1), transform .5s ' + delay + 'ms cubic-bezier(.7,0,.3,1)';
+							el.style.WebkitTransform = 'scale3d(0.1,0.1,1)';
+							el.style.transform = 'scale3d(0.1,0.1,1)';
+							el.style.opacity = 0;
+						}
+					});
+				},
+				onCloseItem : function(instance, item) {
+					instance.items.forEach(function(el) {
+						if(item != el) {
+							el.style.WebkitTransition = 'opacity .4s, -webkit-transform .4s';
+							el.style.transition = 'opacity .4s, transform .4s';
+							el.style.WebkitTransform = 'scale3d(1,1,1)';
+							el.style.transform = 'scale3d(1,1,1)';
+							el.style.opacity = 1;
+
+							onEndTransition(el, function() {
+								el.style.transition = 'none';
+								el.style.WebkitTransform = 'none';
+							});
+						}
+					});
+				}
+			});
+			
+
+
+
+		})();
+	</script>
+	<script>
+		
+
+
+	</script>
+</body>
+
+</html>

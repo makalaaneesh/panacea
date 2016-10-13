@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Skeleton: Responsive CSS Boilerplate</title>
+  <title>HOME</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -15,7 +15,10 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  {# <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'> #}
+   <link href='//fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+   <link href='//fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet' type='text/css'>
+
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -24,14 +27,30 @@
    <link rel="stylesheet" type="text/css" href="{% static "main/css/nav.css" %}" />
    <link rel="stylesheet" type="text/css" href="{% static "main/css/skeleton_custom.css" %}" />
 
+
+
+    <link rel="stylesheet" type="text/css" href="{% static "main/css/line/normalize.css" %}" />
+        <link rel="stylesheet" type="text/css" href="{% static "main/css/line/demo.css" %}" />
+        <link rel="stylesheet" type="text/css" href="{% static "main/css/line/component.css" %}" />
+        <link rel="stylesheet" type="text/css" href="{% static "main/css/line/linkstyles.css" %}" />
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src = "{% static "main/js/line/modernizr.custom.js" %}"></script>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
   <style>
+
+  body{
+    background-color: #3E3D40;
+    color: #fff;
+    overflow-y: hidden; 
+    font-family: 'Comfortaa', sans-serif;
+    /*background-image: url("{% static "main/images/collage.jpg" %}");*/
+  }
 
 
   .values {
@@ -50,7 +69,8 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  {% include "main/nav.djt" %}
+  {% include "main/nav2.djt" %}
+
 
   <div class="section">
     <div class="container">
@@ -63,11 +83,20 @@
         <div class="two-thirds column">
           <!-- <h4 class="hero-heading">Quote</h4> -->
           <!-- <a class="button button-primary" href="/art">VieeCollection</a> -->
-         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+         Uma makala is a self taught artist from Hyderabad with a degree in commerce. She has spent most of her life in Lagos , Nigeria. Despite having wide exposure to different cultures and people, she loves doing her artworks in mythological subjects like “Love of Radha-krishna”. Serenity of nature has drawn her into landscapes and buddha paintings. She loves working with all the mediums and styles instead of sticking to one. Participated in many group shows in Hyderabad, Vizag , Pune and other places. Many of her paintings are in a private collection in India and Abroad.
         </div>
       </div>
+      <br>
+      <br>
+      <br>
     </div>
+      <div class="grid__item">
+        <span class = "link">View my entire</span><a class="link link--kumya" href="#"><span data-letters="Collection">Collection</span></a>
   </div>
+  </div>
+
+
+
 <!-- 
   <div class="section values">
     <div class="container">
@@ -92,6 +121,9 @@
   </div>
 
  -->
+
+
+ <!--
  <div class="section values">
     <div class="container">
       
@@ -105,7 +137,7 @@
       <a class="button button-primary" href="http://getskeleton.com">View My entire collection</a>
     </div>
   </div>
-
+-->
  <!--  <div class="section categories">
     <div class="container">
       <h3 class="section-heading">Responsive Images</h3>
